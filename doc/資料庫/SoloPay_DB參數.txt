@@ -1,0 +1,8 @@
+
+SoloPay DB
+------------------
+Schemas：solopay
+Hostname：solo-db-ap-southeast-1a.cwiwwoud6ir7.ap-southeast-1.rds.amazonaws.com
+port：3306
+username： dbadmin
+password： a=123456

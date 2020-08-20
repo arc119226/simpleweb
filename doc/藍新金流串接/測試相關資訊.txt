@@ -1,0 +1,30 @@
+藍新金流 測試平台 
+https://cwww.newebpay.com/
+
+藍新商店
+https://ccore.newebpay.com/EPG/solocoin/p6uxW1
+
+付款連結
+https://ccore.newebpay.com/EPG/solocoin/p6uxW1
+
+收款連結
+https://ccore.newebpay.com/EPG/MS16758663/p6uxW1
+
+商店代號
+MS16758663
+
+API串接金鑰
+7XCNKEnS4X9UFX3w7VdQ6j3qgD6FabTg
+
+HashIV
+C469bFGX2OuwKGwP
+
+
+[MerchantID] => MS16758663 [RespondType] => JSON [TimeStamp] => 1564107702 [Version] => 1.5 [MerchantOrderNo] => 1564107702 [Amt] => 40 [ItemDesc] => UnitTest
+MerchantID=MS16758663&RespondType=JSON&TimeStamp1564107702&MerchantOrderNo=1564107702&Version=1.5&Amt=300&ItemDesc=test
+
+d21ccb3600358f8a02af4ae8dcd92781513c6e2869d9c6e5b3c19ec01a9b74da4ea8b1613468ae118234c0284a4ba930372f550ed130e66e4c5c4d09db6f1bb7f6a0f45125812c514ef6b0f592b9c61640b4770b5bdda3a31a59fed19f1f27a13e6c27a4af7e551a366fcbedb8d30bf27034b5b051e6711c2e844456986de407
+
+HashKey=7XCNKEnS4X9UFX3w7VdQ6j3qgD6FabTg&d21ccb3600358f8a02af4ae8dcd92781513c6e2869d9c6e5b3c19ec01a9b74da4ea8b1613468ae118234c0284a4ba930372f550ed130e66e4c5c4d09db6f1bb7f6a0f45125812c514ef6b0f592b9c61640b4770b5bdda3a31a59fed19f1f27a13e6c27a4af7e551a366fcbedb8d30bf27034b5b051e6711c2e844456986de407&HashIV=C469bFGX2OuwKGwP
+
+56D7F0A94C287E5853C2893A8701EB96E90483A7494DAF29BC42D81A2AB9EC8F

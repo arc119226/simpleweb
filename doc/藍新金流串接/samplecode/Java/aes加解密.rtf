@@ -1,0 +1,97 @@
+{\rtf1\ansi\ansicpg950\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset136 STHeitiTC-Light;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 1. Crypto.java 
+\f1 \'a5\'5b\'b8\'d1\'b1\'4b
+\f0 Class\
+ \
+import java.nio.charset.Charset;\
+import java.security.InvalidAlgorithmParameterException;\
+import java.security.InvalidKeyException;\
+import java.security.NoSuchAlgorithmException;\
+ \
+import javax.crypto.BadPaddingException;\
+import javax.crypto.Cipher;\
+import javax.crypto.IllegalBlockSizeException;\
+import javax.crypto.NoSuchPaddingException;\
+import javax.crypto.spec.IvParameterSpec;\
+import javax.crypto.spec.SecretKeySpec;\
+ \
+public class Crypto \{\
+private static final String mEngine = "AES";\
+private static final String mCrypto = "AES/CBC/PKCS7Padding";\
+private String mKey;\
+private String mIv;\
+ \
+public Crypto(String key, String iv) \{\
+this.mKey = key;\
+this.mIv = iv;\
+\}\
+ \
+public byte[] cipher(byte[] data, int mode, String crypto)\
+throws NoSuchAlgorithmException, NoSuchPaddingException,\
+InvalidKeyException, IllegalBlockSizeException,\
+BadPaddingException, InvalidAlgorithmParameterException \{\
+ \
+SecretKeySpec sks = new SecretKeySpec(mKey.getBytes(Charset\
+.forName("UTF-8")), mEngine);\
+IvParameterSpec ivs = new IvParameterSpec(mIv.getBytes(Charset\
+.forName("UTF-8")));\
+Cipher c = Cipher.getInstance(crypto);\
+c.init(mode, sks, ivs);\
+return c.doFinal(data);\
+\}\
+ \
+public byte[] encrypt(byte[] data) throws InvalidKeyException,\
+NoSuchAlgorithmException, NoSuchPaddingException,\
+IllegalBlockSizeException, BadPaddingException,\
+InvalidAlgorithmParameterException \{\
+return cipher(data, Cipher.ENCRYPT_MODE, mCrypto);\
+\}\
+ \
+public byte[] decrypt(byte[] data) throws InvalidKeyException,\
+NoSuchAlgorithmException, NoSuchPaddingException,\
+IllegalBlockSizeException, BadPaddingException,\
+InvalidAlgorithmParameterException \{\
+return cipher(data, Cipher.DECRYPT_MODE, mCrypto);\
+\}\
+ \
+\}\
+ \
+2. byte
+\f1 \'c2\'e0
+\f0 Hex function\
+public static String bytesToHex(byte[] data) \{\
+return String.format("%0" + (data.length * 2) + 'x', new BigInteger(1,\
+data));\
+\}\
+ \
+3. how to use\
+ \
+Crypto crypto = new Crypto(key, iv);\
+try \{\
+bytePostData = crypto.encrypt(postdata.getBytes(Charset\
+.forName("UTF-8")));\
+sPostData = bytesToHex((bytePostData)).trim();\
+\} catch (InvalidKeyException e) \{\
+// TODO Auto-generated catch block\
+e.printStackTrace();\
+\} catch (NoSuchAlgorithmException e) \{\
+// TODO Auto-generated catch block\
+e.printStackTrace();\
+\} catch (NoSuchPaddingException e) \{\
+// TODO Auto-generated catch block\
+e.printStackTrace();\
+\} catch (IllegalBlockSizeException e) \{\
+// TODO Auto-generated catch block\
+e.printStackTrace();\
+\} catch (BadPaddingException e) \{\
+// TODO Auto-generated catch block\
+e.printStackTrace();\
+\} catch (InvalidAlgorithmParameterException e) \{\
+// TODO Auto-generated catch block\
+e.printStackTrace();\
+\}}

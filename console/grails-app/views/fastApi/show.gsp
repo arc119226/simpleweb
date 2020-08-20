@@ -1,0 +1,1 @@
+<g:include view="fastApi/edit.gsp" model="[isSave: false]"/>

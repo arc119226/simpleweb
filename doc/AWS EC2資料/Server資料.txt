@@ -1,0 +1,13 @@
+solopay-restserver
+------------------
+Hostname：ec2-13-250-95-158.ap-southeast-1.compute.amazonaws.com
+username：ec2-user
+金鑰檔案：SoloWallet.ppk
+
+solopay-keycloak + NGINX Server
+------------------
+username：ec2-user
+金鑰檔案：SoloWallet.ppk
+console URL：https://solopay.solo-coin.com/keycloak/auth/
+Keycloak Console登入帳密：admin / Ioxoggu3
+Client ID：solopay-api
