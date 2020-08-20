@@ -1,7 +1,3 @@
-**海威案，支援交易所 and 商城**
-
-**官網網址**
-https://www.solo-coin.com/
 
 系統架構
 
